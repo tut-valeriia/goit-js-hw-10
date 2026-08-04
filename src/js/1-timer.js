@@ -11,6 +11,8 @@ const hoursEl = document.querySelector('[data-hours]');
 const minutesEl = document.querySelector('[data-minutes]');
 const secondsEl = document.querySelector('[data-seconds]');
 
+startBtn.disabled = true;
+
 let userSelectedDate = null;
 let timerId = null;
 
@@ -63,6 +65,7 @@ function updateTimerInterface({ days, hours, minutes, seconds }) {
   secondsEl.textContent = addLeadingZero(seconds);
 }
 
+// Обробник кліку на кнопку Start
 startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
   datetimePicker.disabled = true;
